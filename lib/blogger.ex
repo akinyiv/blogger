@@ -1,7 +1,14 @@
 defmodule Blogger do
+  @moduledoc """
+  This module provides functions for fetching and manipulating blog posts.
+  """
+
+  @doc """
+  Fetches a blog post from the specified URL using the HTTPoison library.
+
+  """
    require HTTPoison
 
-# Fetch a blog post from Medium
   @spec fetch_blog :: %{
           :__struct__ => HTTPoison.AsyncResponse | HTTPoison.Response,
           optional(:body) => any,
@@ -16,7 +23,15 @@ defmodule Blogger do
 
   end
 
-# Converts a list of strings to uppercase
+@doc """
+  Transforms a list of strings to uppercase.
+
+  ## Examples
+
+      iex> Blogger.uppercase_all(["cow", "goat", "sheep"])
+      ["COW", "GOAT", "SHEEP"]
+  """
+
   @spec uppercase_all(any) :: list
   def uppercase_all(list) do
     Enum.map(list, &String.upcase/1)
