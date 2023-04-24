@@ -21,6 +21,8 @@ defmodule Blogger.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+       # ...
+      {:ex_doc, "~> 0.29.4", only: :dev, runtime: false},
       {:httpoison, "~> 2.1.0"}
     ]
   end
