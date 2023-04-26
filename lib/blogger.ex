@@ -24,7 +24,7 @@ defmodule Blogger do
   end
 
 @doc """
-  Transforms a list of strings to uppercase.
+  Converts a list of strings to uppercase.
 
   ## Examples
 
