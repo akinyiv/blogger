@@ -23,6 +23,11 @@ defmodule Blogger do
 
   end
 
+  def fetch do
+    HTTPoison.get!("https://jsonplaceholder.typicode.com/posts/1")
+
+  end
+
 @doc """
   Converts a list of strings to uppercase.
 
