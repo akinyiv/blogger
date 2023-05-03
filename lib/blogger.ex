@@ -8,6 +8,7 @@ defmodule Blogger do
 
   """
    require HTTPoison
+   require Jason
 
   @spec fetch_blog :: %{
           :__struct__ => HTTPoison.AsyncResponse | HTTPoison.Response,
@@ -23,10 +24,27 @@ defmodule Blogger do
 
   end
 
-  def fetch do
-    HTTPoison.get!("https://jsonplaceholder.typicode.com/posts/1")
+# Define the URL
+  url = "https://jsonplaceholder.typicode.com/posts/1"
 
-  end
+  # Send a GET request to the URL and store the response
+  response = HTTPoison.get!(url)
+
+  # Extract the response body (data) from the HTTPoison response object
+  data = response.body
+
+  # Decode the JSON data using the Jason module
+  map = Jason.decode!(data)
+
+  # Extract the value associated with the "title" key from the resulting map
+  title = Map.get(map, "title")
+  
+
+
+
+
+
+
 
 @doc """
   Converts a list of strings to uppercase.

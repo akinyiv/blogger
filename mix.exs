@@ -23,7 +23,7 @@ defmodule Blogger.MixProject do
     [
        # ...
       {:ex_doc, "~> 0.29.4", only: :dev, runtime: false},
-      {:httpoison, "~> 2.1.0"}
+      {:httpoison, "~> 2.1.0"},
       {:jason, "~> 1.4.0"}
     ]
   end
